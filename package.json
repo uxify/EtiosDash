@@ -1,0 +1,30 @@
+{
+    "name": "etios-dash",
+    "productName": "EtiosDash",
+    "description": "An awesome app!",
+    "version": "0.1.0",
+    "main": "main.js",
+    "scripts": {
+        "start": "electron .",
+        "build": "electron-packager . --platform linux --arch x64 --out dist/",
+        "deb64": "electron-installer-debian --src dist/EtiosDash-linux-x64/ --dest dist/installers/ --arch amd64"
+    },
+    "devDependencies": {
+        "electron": "1.7.9",
+        "electron-forge": "^4.1.2",
+        "electron-packager": "^9.0.0",
+        "electron-installer-debian": "^0.6.0"
+    },
+    "build": {
+        "linux": {
+            "target": [
+                {
+                    "target": "deb",
+                    "arch": [
+                        "armv7l"
+                    ]
+                }
+            ]
+        }
+    }
+}
